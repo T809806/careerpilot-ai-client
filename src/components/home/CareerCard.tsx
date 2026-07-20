@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 type Career = {
   _id: string;
   title: string;
@@ -43,9 +45,12 @@ const CareerCard = ({ career }: Props) => {
           </p>
         </div>
 
-        <button className="mt-auto rounded-xl bg-[#5B3DF5] py-2 text-white transition hover:bg-[#4A2FE0]">
-          View Details
-        </button>
+       <Link
+  to={`/career/${career._id}`}
+  className="mt-auto rounded-xl bg-[#5B3DF5] py-2 text-center text-white transition hover:bg-[#4A2FE0]"
+>
+  View Details
+</Link>
       </div>
     </div>
   );
