@@ -7,7 +7,7 @@ import Explore from "../pages/Explore/Explore";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
 import Login from "../pages/Login/Login";
-import Register from "../pages/Register/Register";
+import Register from "../pages/Auth/Register";
 import NotFound from "../pages/NotFound/NotFound";
 import CareerDetails from "../pages/Details/CareerDetails";
 
