@@ -5,14 +5,13 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBgmqu9Ihc4KyDlhQpMCGZwEQDm_4vLsCo",
-  authDomain: "careerpilot-ai-b810d.firebaseapp.com",
-  projectId: "careerpilot-ai-b810d",
-  storageBucket: "careerpilot-ai-b810d.firebasestorage.app",
-  messagingSenderId: "943777100022",
-  appId: "1:943777100022:web:6a118f1152df5d1df37cd7"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export default app;
