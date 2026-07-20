@@ -48,7 +48,7 @@ const Hero = () => {
             <p className="text-center text-lg font-semibold text-violet-700">
               AI Career Illustration
               <br />
-              (Image will be added later)
+            
             </p>
 
           </div>
