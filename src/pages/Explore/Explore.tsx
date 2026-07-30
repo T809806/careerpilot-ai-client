@@ -24,12 +24,9 @@ const Explore = () => {
         Explore Careers
       </h1>
 
-      <p className="mt-3 text-center text-gray-500">
-        Find the perfect career opportunity.
-      </p>
+      <p className="mt-3 text-center text-gray-500"> Find the perfect career opportunity </p>
 
-      {/* Search + Filter */}
-      <div className="mt-10 grid gap-4 md:grid-cols-3">
+ <div className="mt-10 grid gap-4 md:grid-cols-3">
         <input
           type="text"
           placeholder="Search by title..."
@@ -66,7 +63,7 @@ const Explore = () => {
         </select>
       </div>
 
-      {/* Loading */}
+    
       {isLoading ? (
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 6 }).map((_, index) => (
@@ -79,7 +76,7 @@ const Explore = () => {
         </div>
       ) : (
         <>
-          {/* Career Cards */}
+          
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {careers.map((career: any) => (
               <CareerCard
@@ -89,7 +86,7 @@ const Explore = () => {
             ))}
           </div>
 
-          {/* Pagination */}
+         
           {data?.totalPages > 1 && (
             <div className="mt-10 flex flex-wrap justify-center gap-2">
               <button

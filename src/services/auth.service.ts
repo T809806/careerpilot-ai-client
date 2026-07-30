@@ -11,8 +11,6 @@ import {
 
 
 const auth = getAuth(app);
-
-
 const googleProvider = new GoogleAuthProvider();
 
 
@@ -49,7 +47,6 @@ export const googleLogin = () => {
     googleProvider
   );
 };
-
 
 export const logoutUser = () => {
 

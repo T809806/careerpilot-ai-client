@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import {
+
   getMyCareers,
   deleteCareer,
 } from "../../services/career.service";
@@ -60,10 +61,10 @@ const ManageCareers = () => {
   }
 
   return (
+
     <section className="mx-auto max-w-7xl px-4 py-12">
 
-      <h1 className="text-center text-4xl font-bold text-violet-700">
-        Manage Careers
+      <h1 className="text-center text-4xl font-bold text-violet-700"> Manage Careers
       </h1>
 
       <p className="mt-3 text-center text-gray-500">
@@ -128,17 +129,18 @@ const ManageCareers = () => {
 
 </td>
 
-              </tr>
+   </tr>
 
-            ))}
+   ))}
 
-          </tbody>
+   </tbody>
 
-        </table>
+   </table>
 
-      </div>
+   </div>
 
     </section>
+    
   );
 };
 

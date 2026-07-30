@@ -79,17 +79,12 @@ const career = {
   };
 
   return (
+
     <section className="min-h-screen bg-gray-50 py-12">
 
-      <div className="mx-auto max-w-3xl rounded-3xl bg-white p-10 shadow-xl">
-
-        <h1 className="text-center text-4xl font-bold text-violet-700">
-          Add Career
-        </h1>
-
-        <p className="mt-3 text-center text-gray-500">
-          Publish a new career opportunity.
-        </p>
+       <div className="mx-auto max-w-3xl rounded-3xl bg-white p-10 shadow-xl">
+       <h1 className="text-center text-4xl font-bold text-violet-700"> Add Career </h1>
+       <p className="mt-3 text-center text-gray-500"> Publish a new career opportunity </p>
 
         <form
           onSubmit={handleSubmit}
@@ -129,10 +124,11 @@ const career = {
             name="type"
             className="w-full rounded-xl border p-3"
           >
-            <option>Full-Time</option>
-            <option>Part-Time</option>
-            <option>Remote</option>
-            <option>Internship</option>
+            <option> Full-Time </option>
+            <option> Part-Time </option>
+            <option> Remote </option>
+            <option> Internship </option>
+
           </select>
 
           <input

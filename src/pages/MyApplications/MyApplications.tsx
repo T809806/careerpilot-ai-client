@@ -29,14 +29,8 @@ return (
   <section className="min-h-screen bg-gray-50 py-12">
 
     <div className="mx-auto max-w-7xl px-5">
-
-      {/* Heading */}
-
-      <div className="mb-10 text-center">
-
-        <h1 className="text-5xl font-bold text-violet-700">
-          My Applications
-        </h1>
+    <div className="mb-10 text-center">
+    <h1 className="text-5xl font-bold text-violet-700"> My Applications </h1>
 
         <p className="mt-3 text-lg text-gray-500">
           Track all the jobs you have applied for.

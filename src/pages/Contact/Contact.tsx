@@ -1,25 +1,22 @@
 const Contact = () => {
+
   return (
     <section className="bg-slate-50 py-20">
       <div className="mx-auto max-w-5xl px-4">
 
-        <h1 className="text-center text-5xl font-bold text-violet-700">
-          Contact Us
-        </h1>
-
-        <p className="mt-5 text-center text-gray-600">
+       <h1 className="text-center text-5xl font-bold text-violet-700"> Contact Us </h1>
+       <p className="mt-5 text-center text-gray-600">
           We'd love to hear from you.
+
         </p>
 
-        <div className="mt-14 grid gap-10 md:grid-cols-2">
+  <div className="mt-14 grid gap-10 md:grid-cols-2">
 
-          <div className="rounded-3xl bg-white p-8 shadow-lg">
+     <div className="rounded-3xl bg-white p-8 shadow-lg">
 
-            <h2 className="text-2xl font-bold text-violet-700">
-              Get in Touch
-            </h2>
+         <h2 className="text-2xl font-bold text-violet-700">  Get in Touch </h2>
 
-            <div className="mt-8 space-y-5">
+    <div className="mt-8 space-y-5">
 
               <p>
                 📧 support@careerpilotai.com
@@ -70,8 +67,7 @@ const Contact = () => {
           </div>
 
         </div>
-
-      </div>
+       </div>
     </section>
   );
 };

@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
+
   return (
     <section className="flex min-h-screen items-center justify-center bg-slate-50 px-4">
       <div className="text-center ">
 
-        <h1 className="text-8xl font-bold text-violet-700">
-          404
+        <h1 className="text-8xl font-bold text-violet-700"> 404
         </h1>
 
         <h2 className="mt-4 text-3xl font-bold">
@@ -24,7 +24,6 @@ const ErrorPage = () => {
           Back to Home
         </Link>
        
-
       </div>
     </section>
   );

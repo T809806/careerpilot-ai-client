@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import type { User } from "firebase/auth";
-
 import AuthContext from "../context/AuthContext";
 
 import auth, {
@@ -25,7 +24,7 @@ const AuthProvider = ({ children }: Props) => {
   const [loading, setLoading] = useState(true);
 
 
-  // Register
+  
   const createUser = async (
     email: string,
     password: string
@@ -40,7 +39,7 @@ const AuthProvider = ({ children }: Props) => {
   };
 
 
-  // Login
+ 
   const signIn = async (
     email: string,
     password: string
@@ -55,7 +54,7 @@ const AuthProvider = ({ children }: Props) => {
   };
 
 
-  // Google Login
+  
   const signInWithGoogle = async () => {
     setLoading(true);
 
@@ -67,7 +66,7 @@ const AuthProvider = ({ children }: Props) => {
   };
 
 
-  // Logout
+
   const logOut = async () => {
     setLoading(true);
 
@@ -79,8 +78,7 @@ const AuthProvider = ({ children }: Props) => {
   };
 
 
-  // Firebase user observer
-  useEffect(() => {
+ useEffect(() => {
 
     const unsubscribe = onAuthStateChanged(
       auth,

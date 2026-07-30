@@ -2,7 +2,6 @@ import { useState } from "react";
 import { getAIRecommendation } from "../../services/career.service";
 import toast from "react-hot-toast";
 
-
 const AIRecommendation = () => {
   const [skills, setSkills] = useState("");
   const [experience, setExperience] = useState("");
@@ -44,9 +43,7 @@ const handleRecommendation = async () => {
 
   return (
     <section className="mx-auto max-w-5xl px-4 py-16">
-      <h1 className="text-center text-4xl font-bold text-violet-700">
-        AI Career Recommendation
-      </h1>
+      <h1 className="text-center text-4xl font-bold text-violet-700"> AI Career Recommendation </h1>
 
       <p className="mt-3 text-center text-gray-500">
         Get a personalized career suggestion based on your skills and interests.
@@ -98,11 +95,12 @@ const handleRecommendation = async () => {
             />
           </div>
 
-         <button
+   <button
   onClick={handleRecommendation}
   className="w-full rounded-xl bg-violet-700 py-4 font-semibold text-white transition hover:text-orange-600"
 >
   {loading ? "Generating..." : "Get AI Recommendation"}
+  
 </button>
 
         </div>

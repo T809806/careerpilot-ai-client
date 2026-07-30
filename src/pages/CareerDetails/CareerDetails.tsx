@@ -6,7 +6,9 @@ import axios from "axios";
 import AuthContext from "../../context/AuthContext";
 
 const CareerDetails = () => {
-    console.log("NEW CareerDetails Loaded");
+
+ console.log("NEW CareerDetails Loaded");
+
   const { id } = useParams();
   const { user } = useContext(AuthContext)!;
 
@@ -76,10 +78,11 @@ const CareerDetails = () => {
 };
 
   return (
+
     <section className="bg-slate-50 py-16">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 rounded-2xl bg-white p-8 shadow-lg md:grid-cols-2">
 
-        {/* Left */}
+        
         <div>
           <img
             src={career.image}
@@ -88,7 +91,7 @@ const CareerDetails = () => {
           />
         </div>
 
-        {/* Right */}
+       
         <div>
           <span className="rounded-full bg-purple-100 px-3 py-1 text-sm font-medium text-purple-700">
             {career.type}
@@ -126,7 +129,7 @@ const CareerDetails = () => {
             </p>
           </div>
 
-         <button
+ <button
   onClick={handleApply}
   className="mt-10 rounded-xl bg-[#5B3DF5] px-8 py-3 font-semibold text-white transition hover:bg-orange-600"
 >
@@ -141,6 +144,7 @@ const CareerDetails = () => {
       </div>
     </section>
   );
+  
 };
 
 export default CareerDetails;

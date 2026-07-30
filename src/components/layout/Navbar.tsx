@@ -277,6 +277,7 @@ const Navbar = () => {
                   className="block rounded-xl border border-violet-700 py-3 text-center text-violet-700"
                 >
                   Login
+                  
                 </Link>
 
                 <Link
@@ -285,7 +286,7 @@ const Navbar = () => {
                   className="block rounded-xl bg-violet-700 py-3 text-center text-white"
                 >
                   Register
-                  
+
                 </Link>
               </>
             )}

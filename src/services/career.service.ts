@@ -5,7 +5,7 @@ const API = axios.create({
   withCredentials: true,
 });
 
-// Get All Careers
+
 export const getCareers = async (
   page = 1,
   search = "",
@@ -25,7 +25,7 @@ export const getCareers = async (
   return res.data;
 };
 
-// Get Single Career
+
 export const getSingleCareer = async (id: string) => {
   const res = await API.get(`/careers/${id}`);
   return res.data;

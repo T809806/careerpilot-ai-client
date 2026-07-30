@@ -7,7 +7,9 @@ import Testimonials from "../../components/home/Testimonials";
 import FAQ from "../../components/home/FAQ";
 
 const Home = () => {
+
   return (
+    
     <>
       <Hero />
       <FeaturedCareers />

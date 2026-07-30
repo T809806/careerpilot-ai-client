@@ -2,15 +2,13 @@ import { useContext, useState } from "react";
 import type { FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-
 import AuthContext from "../../context/AuthContext";
 import toast from "react-hot-toast";
 
 const Register = () => {
+
   const { createUser } = useContext(AuthContext)!;
-
   const navigate = useNavigate();
-
   const [loading, setLoading] = useState(false);
 
   const handleRegister = async (
@@ -35,7 +33,7 @@ const Register = () => {
     try {
       setLoading(true);
 
-      // 1. Firebase Registration
+      
       console.log("🔥 Before Firebase");
 
       const result = await createUser(
@@ -50,7 +48,7 @@ const Register = () => {
         firebaseUser
       );
 
-      // 2. Data going to MongoDB
+     
       const userData = {
         name,
         email: firebaseUser.email,
@@ -64,13 +62,13 @@ const Register = () => {
         userData
       );
 
-      // 3. Save user in MongoDB
+      
       const response = await axios.post(
         "http://localhost:5000/api/users/register",
         userData
       );
 
-      // 4. MongoDB Response
+      
       console.log(
         "✅ MongoDB Success:",
         response.data
@@ -115,16 +113,16 @@ const Register = () => {
   };
 
   return (
+
     <section className="flex min-h-screen items-center justify-center bg-slate-50 px-4">
 
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
 
-        <h1 className="text-center text-3xl font-bold text-[#5B3DF5]">
-          Create Account
-        </h1>
+        <h1 className="text-center text-3xl font-bold text-[#5B3DF5]"> Create Account </h1>
 
         <p className="mt-2 text-center text-gray-500">
-          Join CareerPilot AI and start your career journey.
+          Join CareerPilot AI and start your career journey
+
         </p>
 
         <form
@@ -137,14 +135,14 @@ const Register = () => {
               Full Name
             </label>
 
-            <input
-              name="name"
-              type="text"
-              placeholder="Full Name"
-              className="w-full rounded-xl border p-3 outline-none focus:border-[#5B3DF5]"
-              required
-            />
-          </div>
+     <input
+         name="name"
+         type="text"
+         placeholder="Full Name"
+         className="w-full rounded-xl border p-3 outline-none focus:border-[#5B3DF5]"
+         required
+       />
+   </div>
 
 
           <div>
@@ -205,6 +203,7 @@ const Register = () => {
       </div>
 
     </section>
+    
   );
 };
 

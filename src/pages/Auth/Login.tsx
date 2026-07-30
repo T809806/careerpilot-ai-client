@@ -1,14 +1,13 @@
 import { useContext, useState } from "react";
 import type { FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import AuthContext from "../../context/AuthContext";
 import axios from "axios";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  const { signIn, signInWithGoogle } = useContext(AuthContext)!;
 
+  const { signIn, signInWithGoogle } = useContext(AuthContext)!;
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
@@ -91,16 +90,12 @@ navigate("/");
   };
 
   return (
+
     <section className="flex min-h-screen items-center justify-center bg-slate-50 px-4">
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
 
-        <h1 className="text-center text-3xl font-bold text-[#5B3DF5]">
-          Welcome Back
-        </h1>
-
-        <p className="mt-2 text-center text-gray-500">
-          Login to continue your career journey.
-        </p>
+        <h1 className="text-center text-3xl font-bold text-[#5B3DF5]"> Welcome Back </h1>
+        <p className="mt-2 text-center text-gray-500"> Login to continue your career journey </p>
 
         <form
           onSubmit={handleLogin}
@@ -173,6 +168,7 @@ navigate("/");
       </div>
     </section>
   );
+  
 };
 
 export default Login;
