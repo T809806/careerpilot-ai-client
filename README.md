@@ -4,6 +4,12 @@ CareerPilot AI is an AI-powered career guidance platform that helps students, fr
 
 ---
 
+# ScreenShot: <img width="1890" height="800" alt="image" src="https://github.com/user-attachments/assets/8e67f87f-3c75-4f95-b9f0-49664abbfc5f" />
+<img width="1843" height="816" alt="image" src="https://github.com/user-attachments/assets/a66f975c-8633-46af-8e60-64a84546c0d9" />
+<img width="1871" height="906" alt="image" src="https://github.com/user-attachments/assets/7c2bed2d-e888-42ed-b877-ea47d04abf52" />
+
+---
+
 ## 🌐 Live Website
 
 **Live Site:** `https://careerpilot-ai-client-five.vercel.app`
