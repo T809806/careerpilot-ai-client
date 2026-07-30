@@ -3,61 +3,131 @@ import {
   FaFacebook,
   FaGithub,
   FaLinkedin,
+  FaEnvelope,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 import Container from "./Container";
 
 const Footer = () => {
+
   return (
-    <footer className="mt-20 border-t border-gray-200 bg-white">
+
+    <footer className="mt-20 bg-gradient-to-br from-violet-50 via-white to-orange-50 border-t">
+
       <Container>
-        <div className="grid gap-10 py-12 md:grid-cols-3">
 
-          {/* Logo */}
-          <div>
-            <h2 className="text-2xl font-bold text-violet-700">
-              CareerPilot AI
-            </h2>
+ <div className="grid gap-10 py-14 md:grid-cols-3">
 
-            <p className="mt-3 text-gray-600">
-              AI-powered career guidance to help students and job seekers
-              build resumes, discover opportunities, and prepare with
-              confidence.
-            </p>
-          </div>
+       
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="mb-4 text-lg font-semibold">
-              Quick Links
-            </h3>
+  <div>
 
-            <div className="flex flex-col gap-2 text-gray-600">
-              <Link to="/">Home</Link>
-              <Link to="/explore">Explore</Link>
-              <Link to="/about">About</Link>
-              <Link to="/contact">Contact</Link>
+    <h2 className="text-3xl font-extrabold">
+       <span className="text-violet-700"> CareerPilot </span>
+       <span className="text-orange-500"> AI </span>
+
+    </h2>
+
+     <p className="mt-5 leading-7 text-gray-600">
+              CareerPilot AI helps students and job seekers
+              build professional resumes, generate AI-powered
+              cover letters, discover careers, and receive
+              personalized career recommendations.
+   </p>
+
+  </div>
+
+        
+
+   <div>
+
+     <h3 className="mb-5 text-xl font-bold text-gray-800"> Quick Links </h3>
+
+       <div className="flex flex-col gap-3">
+
+              <Link
+                to="/"
+                className="text-gray-600 transition hover:text-violet-700"
+              >
+                Home
+              </Link>
+
+              <Link
+                to="/explore"
+                className="text-gray-600 transition hover:text-violet-700"
+              >
+                Explore Careers
+              </Link>
+
+              <Link
+                to="/ai-recommendation"
+                className="text-gray-600 transition hover:text-violet-700"
+              >
+                AI Recommendation
+              </Link>
+
+              <Link
+                to="/cover-letter"
+                className="text-gray-600 transition hover:text-violet-700"
+              >
+                AI Cover Letter
+              </Link>
+
+              <Link
+                to="/about"
+                className="text-gray-600 transition hover:text-violet-700"
+              >
+                About
+              </Link>
+
+              <Link
+                to="/contact"
+                className="text-gray-600 transition hover:text-violet-700 "
+              >
+                Contact
+              </Link>
+
             </div>
+
           </div>
 
-          {/* Contact */}
+         
+
           <div>
-            <h3 className="mb-4 text-lg font-semibold">
-              Contact
-            </h3>
 
-            <p className="text-gray-600">
-              Email: support@careerpilotai.com
-            </p>
+            <h3 className="mb-5 text-xl font-bold text-gray-800"> Contact </h3>
 
-            <p className="mt-2 text-gray-600">
-              Dhaka, Bangladesh
-            </p>
+            <div className="space-y-4">
 
-            <div className="mt-5 flex gap-4 text-2xl text-violet-700">
+              <div className="flex items-center gap-3">
+
+                <FaEnvelope className="text-violet-700" />
+
+                <span className="text-gray-600">
+                  support@careerpilotai.com
+                </span>
+
+              </div>
+
+              <div className="flex items-center gap-3">
+
+                <FaMapMarkerAlt className="text-orange-500" />
+
+                <span className="text-gray-600">
+                  Dhaka, Bangladesh
+                </span>
+
+              </div>
+
+            </div>
+
+            <div className="mt-7 flex gap-4">
+
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-violet-100 text-xl text-violet-700 transition hover:bg-red-600 hover:text-white"
               >
                 <FaFacebook />
               </a>
@@ -66,6 +136,7 @@ const Footer = () => {
                 href="https://github.com"
                 target="_blank"
                 rel="noreferrer"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-violet-100 text-xl text-violet-700 transition hover:bg-red-600 hover:text-white"
               >
                 <FaGithub />
               </a>
@@ -74,18 +145,25 @@ const Footer = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-violet-100 text-xl text-violet-700 transition hover:bg-red-600 hover:text-white"
               >
                 <FaLinkedin />
               </a>
+
             </div>
+
           </div>
 
         </div>
 
-        <div className="border-t border-gray-200 py-5 text-center text-sm text-gray-500">
-          © 2026 CareerPilot AI. All rights reserved.
+        <div className="border-t py-6 text-center text-sm text-gray-500">
+
+          © 2026 CareerPilot AI • All Rights Reserved
+
         </div>
+
       </Container>
+
     </footer>
   );
 };

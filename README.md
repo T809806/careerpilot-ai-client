@@ -1,77 +1,124 @@
-# React + TypeScript + Vite
+# 🚀 CareerPilot AI - Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CareerPilot AI is an AI-powered career guidance platform that helps students, fresh graduates, and job seekers discover suitable career paths, generate AI-powered cover letters, and receive personalized career recommendations.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Live Website
 
-## React Compiler
+**Live Site:** `https://careerpilot-ai-client-five.vercel.app`
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## ✨ Features
 
-## Expanding the ESLint configuration
+* 🤖 AI Career Recommendation
+* 📝 AI Cover Letter Generator
+* 🔐 Firebase Authentication (Email/Password & Google Login)
+* 🔒 Protected Routes using JWT Authentication
+* 💼 Explore Career Opportunities
+* 📄 Career Details Page
+* ➕ Add Career
+* 🗂️ Manage Careers
+* 📌 My Applications
+* 🔍 Search Careers
+* 🎯 Filter by Location
+* 💰 Sort by Salary
+* 📄 Pagination
+* ⚡ Skeleton Loading
+* 📱 Fully Responsive Design
+* 🎨 Modern UI with Tailwind CSS
+* 🔔 Beautiful Toast Notifications
+* ❌ Custom Error Page
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Technologies Used
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* React
+* TypeScript
+* React Router DOM
+* TanStack Query
+* Axios
+* Tailwind CSS
+* Firebase Authentication
+* React Hot Toast
+* Framer Motion
+* React Icons
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
 
+## 📦 NPM Packages
+
+* react
+* react-router-dom
+* @tanstack/react-query
+* axios
+* firebase
+* react-hot-toast
+* framer-motion
+* react-icons
+
+---
+
+## ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone <client-repository-url>
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Move to project
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+cd client
 ```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the project
+
+```bash
+npm run dev
+```
+
+---
+
+## 🔑 Environment Variables
+
+Create a `.env.local` file and add:
+
+```env
+VITE_API_URL=your_server_url
+
+VITE_FIREBASE_API_KEY=
+VITE_FIREBASE_AUTH_DOMAIN=
+VITE_FIREBASE_PROJECT_ID=
+VITE_FIREBASE_STORAGE_BUCKET=
+VITE_FIREBASE_MESSAGING_SENDER_ID=
+VITE_FIREBASE_APP_ID=
+```
+
+---
+
+## 📁 Folder Structure
+
+* components
+* pages
+* routes
+* providers
+* context
+* services
+* layouts
+* assets
+
+---
+
+## 👩‍💻 Developed By
+
+**Tahiya Akter**

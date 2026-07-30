@@ -9,14 +9,18 @@ import {
   signOut,
 } from "firebase/auth";
 
+
 const auth = getAuth(app);
 
+
 const googleProvider = new GoogleAuthProvider();
+
 
 export const registerUser = (
   email: string,
   password: string
 ) => {
+
   return createUserWithEmailAndPassword(
     auth,
     email,
@@ -24,10 +28,12 @@ export const registerUser = (
   );
 };
 
+
 export const loginUser = (
   email: string,
   password: string
 ) => {
+
   return signInWithEmailAndPassword(
     auth,
     email,
@@ -35,12 +41,20 @@ export const loginUser = (
   );
 };
 
+
 export const googleLogin = () => {
-  return signInWithPopup(auth, googleProvider);
+
+  return signInWithPopup(
+    auth,
+    googleProvider
+  );
 };
 
+
 export const logoutUser = () => {
+
   return signOut(auth);
 };
+
 
 export default auth;

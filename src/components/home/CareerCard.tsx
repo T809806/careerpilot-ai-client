@@ -17,6 +17,7 @@ type Props = {
 
 const CareerCard = ({ career }: Props) => {
   return (
+
     <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
       <img
         src={career.image}
@@ -45,11 +46,11 @@ const CareerCard = ({ career }: Props) => {
           </p>
         </div>
 
-       <Link
+   <Link
   to={`/career/${career._id}`}
-  className="mt-auto rounded-xl bg-[#5B3DF5] py-2 text-center text-white transition hover:bg-[#4A2FE0]"
->
-  View Details
+  className="mt-auto rounded-xl bg-[#5B3DF5] py-2 text-center text-white transition hover:bg-orange-600"
+>  View Details
+
 </Link>
       </div>
     </div>

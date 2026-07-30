@@ -1,57 +1,74 @@
+import { Link } from "react-router-dom";
 import Button from "../common/Button";
+import { motion } from "framer-motion";
 
 const Hero = () => {
+
   return (
-    <section className="bg-[#FAFAFC]">
-      <div className="mx-auto flex min-h-[70vh] max-w-7xl flex-col items-center justify-between gap-10 px-5 py-16 lg:flex-row">
+    <section className="bg-gradient-to-br from-violet-50 via-white to-orange-50">
+      <div className="mx-auto flex min-h-[75vh] max-w-7xl flex-col-reverse items-center justify-between gap-12 px-6 py-16 lg:flex-row">
 
-        {/* Left Side */}
-        <div className="flex-1">
+       
+ <div className="flex-1">
 
-          <span className="rounded-full bg-violet-100 px-4 py-2 text-sm font-medium text-violet-700">
-            🚀 AI Powered Career Coach
-          </span>
+<motion.span
+  initial={{ opacity: 0, y: -20 }}
+  animate={{
+    opacity: 1,
+    y: [0, -6, 0],
+  }}
+  transition={{
+    opacity: { duration: 0.8 },
+    y: {
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  }}
+  className="inline-flex w-fit items-center rounded-full bg-violet-100 px-5 py-2 text-sm font-semibold text-violet-700 shadow-lg"
+>
+  🚀 AI Powered Career Coach
 
-          <h1 className="mt-6 text-5xl font-bold leading-tight text-gray-900 lg:text-6xl">
-            Build Your Dream Career
-            <span className="text-violet-700">
-              {" "}with AI
-            </span>
-          </h1>
+</motion.span>
+
+  <h1 className="mt-6 text-5xl font-bold leading-tight text-gray-900 lg:text-6xl">
+       Build Your Dream Career
+     <span className="text-violet-700"> with AI </span>
+  </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-gray-600">
-            Get AI-powered career guidance, resume feedback,
-            personalized job recommendations, and interview
-            preparation—all in one platform.
+            Discover career opportunities, receive AI-powered
+            recommendations, generate professional cover letters,
+            and prepare for your next interview—all in one place.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
 
-            <Button>
-              Get Started
-            </Button>
+            <Link to="/explore">
+              <Button className="bg-orange-500 hover:text-orange-600">
+                Explore Careers
+              </Button>
+            </Link>
 
-            <Button className="bg-orange-500 hover:bg-orange-600">
-              Explore Careers
-            </Button>
+            <Link to="/ai-recommendation">
+              <Button className=" text-white transition hover:text-orange-600">
+                Try AI Advisor
+              </Button>
+            </Link>
 
           </div>
 
         </div>
 
-        {/* Right Side */}
+       
 
         <div className="flex flex-1 justify-center">
 
-          <div className="flex h-[420px] w-[420px] items-center justify-center rounded-3xl bg-violet-100 shadow-xl">
-
-            <p className="text-center text-lg font-semibold text-violet-700">
-              AI Career Illustration
-              <br />
-            
-            </p>
-
-          </div>
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&auto=format&fit=crop&q=80"
+            alt="Career AI"
+            className="w-full max-w-lg rounded-3xl shadow-2xl"
+          />
 
         </div>
 

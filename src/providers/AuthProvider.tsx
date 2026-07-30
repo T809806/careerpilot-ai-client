@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import type { User } from "firebase/auth";
+
 import AuthContext from "../context/AuthContext";
+
 import auth, {
   googleLogin,
   loginUser,
@@ -10,56 +12,91 @@ import auth, {
   registerUser,
 } from "../services/auth.service";
 
+
 type Props = {
   children: ReactNode;
 };
 
+
 const AuthProvider = ({ children }: Props) => {
+
   const [user, setUser] = useState<User | null>(null);
+
   const [loading, setLoading] = useState(true);
 
+
+  // Register
   const createUser = async (
-  email: string,
-  password: string
-) => {
-  setLoading(true);
-
-  try {
-    return await registerUser(email, password);
-  } finally {
-    setLoading(false);
-  }
-};
-
-  const signIn = (
     email: string,
     password: string
   ) => {
     setLoading(true);
-    return loginUser(email, password);
+
+    try {
+      return await registerUser(email, password);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const signInWithGoogle = () => {
+
+  // Login
+  const signIn = async (
+    email: string,
+    password: string
+  ) => {
     setLoading(true);
-    return googleLogin();
+
+    try {
+      return await loginUser(email, password);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const logOut = () => {
+
+  // Google Login
+  const signInWithGoogle = async () => {
     setLoading(true);
-    return logoutUser();
+
+    try {
+      return await googleLogin();
+    } finally {
+      setLoading(false);
+    }
   };
 
+
+  // Logout
+  const logOut = async () => {
+    setLoading(true);
+
+    try {
+      await logoutUser();
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
+  // Firebase user observer
   useEffect(() => {
+
     const unsubscribe = onAuthStateChanged(
       auth,
       (currentUser) => {
+
         setUser(currentUser);
+
         setLoading(false);
       }
     );
 
+
     return () => unsubscribe();
+
   }, []);
+
 
   const authInfo = {
     user,
@@ -70,11 +107,13 @@ const AuthProvider = ({ children }: Props) => {
     logOut,
   };
 
+
   return (
     <AuthContext.Provider value={authInfo}>
       {children}
     </AuthContext.Provider>
   );
 };
+
 
 export default AuthProvider;
