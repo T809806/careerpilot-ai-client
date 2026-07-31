@@ -5,10 +5,13 @@ import AuthContext from "../../context/AuthContext";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const Login = () => {
+const SERVER_URL = import.meta.env.VITE_API_URL.replace("/api", "");
 
+const Login = () => {
   const { signIn, signInWithGoogle } = useContext(AuthContext)!;
+
   const navigate = useNavigate();
+
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async (
@@ -29,30 +32,29 @@ const Login = () => {
     try {
       setLoading(true);
 
-      const result = await signIn(
-  email,
-  password
-);
+      const result = await signIn(email, password);
 
-await axios.post(
-  "http://localhost:5000/jwt",
-  {
-    email: result.user.email,
-  },
-  {
-    withCredentials: true,
-  }
-);
+      await axios.post(
+        `${SERVER_URL}/jwt`,
+        {
+          email: result.user.email,
+        },
+        {
+          withCredentials: true,
+        }
+      );
 
-toast.success("Login Successful");
+      toast.success("Login Successful");
 
-navigate("/");
-
+      navigate("/");
     } catch (error: any) {
-      console.log("Login Error:", error);
+      console.log(error);
 
-      toast.error(error.message);
-
+      toast.error(
+        error.response?.data?.message ||
+          error.message ||
+          "Login Failed"
+      );
     } finally {
       setLoading(false);
     }
@@ -62,46 +64,50 @@ navigate("/");
     try {
       setLoading(true);
 
-      const result =
-  await signInWithGoogle();
+      const result = await signInWithGoogle();
 
-await axios.post(
-  "https://careerpilot-ai-server-99t0.onrender.com/jwt",
-  {
-    email: result.user.email,
-  },
-  {
-    withCredentials: true,
-  }
-);
+      await axios.post(
+        `${SERVER_URL}/jwt`,
+        {
+          email: result.user.email,
+        },
+        {
+          withCredentials: true,
+        }
+      );
 
-toast.success("Google Login Successful");
+      toast.success("Google Login Successful");
 
-navigate("/");
-
+      navigate("/");
     } catch (error: any) {
       console.log(error);
 
-      toast.error(error.message);
-
+      toast.error(
+        error.response?.data?.message ||
+          error.message ||
+          "Google Login Failed"
+      );
     } finally {
       setLoading(false);
     }
   };
 
   return (
-
     <section className="flex min-h-screen items-center justify-center bg-slate-50 px-4">
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
 
-        <h1 className="text-center text-3xl font-bold text-[#5B3DF5]"> Welcome Back </h1>
-        <p className="mt-2 text-center text-gray-500"> Login to continue your career journey </p>
+        <h1 className="text-center text-3xl font-bold text-[#5B3DF5]">
+          Welcome Back
+        </h1>
+
+        <p className="mt-2 text-center text-gray-500">
+          Login to continue your career journey
+        </p>
 
         <form
           onSubmit={handleLogin}
           className="mt-8 space-y-5"
         >
-
           <input
             name="email"
             type="email"
@@ -125,10 +131,9 @@ navigate("/");
           >
             {loading ? "Logging in..." : "Login"}
           </button>
-
         </form>
 
-        <div className="my-5 text-center">
+        <div className="my-5">
           <button
             onClick={handleGoogleLogin}
             disabled={loading}
@@ -137,25 +142,22 @@ navigate("/");
             Continue with Google
           </button>
         </div>
-<div className="mt-6 rounded-xl border border-violet-200 bg-violet-50 p-4">
-  <h3 className="text-lg font-semibold text-violet-700">
-    Demo Account
-  </h3>
 
-  <p className="mt-3 text-sm text-gray-700">
-    <strong>Email:</strong> demo@careerpilot.com
-  </p>
+        <div className="rounded-xl border border-violet-200 bg-violet-50 p-4">
+          <h3 className="text-lg font-semibold text-violet-700">
+            Demo Account
+          </h3>
 
-  <p className="text-sm text-gray-700">
-    <strong>Password:</strong> 123456
-  </p>
+          <p className="mt-3 text-sm">
+            <strong>Email:</strong> demo@careerpilot.com
+          </p>
 
-  <p className="mt-3 text-xs text-gray-500">
-    Use this account to explore the application without creating a new account.
-  </p>
-</div>
+          <p className="text-sm">
+            <strong>Password:</strong> 123456
+          </p>
+        </div>
 
-        <p className="text-center">
+        <p className="mt-6 text-center">
           Don't have an account?{" "}
           <Link
             to="/register"
@@ -168,7 +170,6 @@ navigate("/");
       </div>
     </section>
   );
-  
 };
 
 export default Login;

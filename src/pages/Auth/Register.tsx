@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import AuthContext from "../../context/AuthContext";
 import toast from "react-hot-toast";
+const SERVER_URL = import.meta.env.VITE_API_URL;
 
 const Register = () => {
 
@@ -64,10 +65,12 @@ const Register = () => {
 
       
       const response = await axios.post(
-        "https://careerpilot-ai-server-99t0.onrender.com/api/users/register",
-        userData
-      );
-
+  `${SERVER_URL}/users/register`,
+  userData,
+  {
+    withCredentials: true,
+  }
+);
       
       console.log(
         "✅ MongoDB Success:",

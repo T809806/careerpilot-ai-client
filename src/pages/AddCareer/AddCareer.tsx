@@ -55,7 +55,7 @@ const career = {
 
     try {
   const res = await axios.post(
-    `${import.meta.env.VITE_API_URL}/api/careers`,
+    `${import.meta.env.VITE_API_URL}/careers`,
     career,
     {
       withCredentials: true,

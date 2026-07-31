@@ -52,18 +52,18 @@ const CareerDetails = () => {
       careerId: career._id,
       title: career.title,
       company: career.company,
-      email: user.email,
+     
       name: user.displayName || "Unknown User",
       appliedAt: new Date(),
     };
 
     const res = await axios.post(
-      "http://localhost:5000/api/applications",
-      application,
-      {
-        withCredentials: true,
-      }
-    );
+  `${import.meta.env.VITE_API_URL}/applications`,
+  application,
+  {
+    withCredentials: true,
+  }
+);
 
     alert(res.data.message);
 
