@@ -54,28 +54,29 @@ const career = {
 };
 
     try {
-      const res = await axios.post(
-        "https://careerpilot-ai-server.onrender.com/api/careers",
-        career,
-        {
-          withCredentials: true,
-        }
-      );
-
-     toast.success(res.data.message);
-
-      form.reset();
-
-      navigate("/explore");
-
-    } catch (error: any) {
-      console.log(error);
-
-      toast.error(
-  error.response?.data?.message ||
-    "Failed to add career."
-);
+  const res = await axios.post(
+    `${import.meta.env.VITE_API_URL}/api/careers`,
+    career,
+    {
+      withCredentials: true,
     }
+  );
+
+  toast.success(res.data.message);
+
+  form.reset();
+
+  navigate("/explore");
+
+} catch (error: any) {
+  console.log(error);
+
+  toast.error(
+    error.response?.data?.message ||
+    "Failed to add career."
+  );
+}
+     
   };
 
   return (
