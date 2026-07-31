@@ -66,7 +66,7 @@ navigate("/");
   await signInWithGoogle();
 
 await axios.post(
-  "http://localhost:5000/jwt",
+  "https://careerpilot-ai-server-99t0.onrender.com/jwt",
   {
     email: result.user.email,
   },
