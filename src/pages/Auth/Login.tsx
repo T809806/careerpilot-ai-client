@@ -14,20 +14,13 @@ const Login = () => {
 
   const [loading, setLoading] = useState(false);
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const handleLogin = async (
     e: FormEvent<HTMLFormElement>
   ) => {
     e.preventDefault();
-
-    const form = e.currentTarget;
-
-    const email = (
-      form.elements.namedItem("email") as HTMLInputElement
-    ).value;
-
-    const password = (
-      form.elements.namedItem("password") as HTMLInputElement
-    ).value;
 
     try {
       setLoading(true);
@@ -92,17 +85,18 @@ const Login = () => {
     }
   };
 
+  const handleDemoLogin = () => {
+    setEmail("demo@careerpilot.com");
+    setPassword("123456");
+  };
+
   return (
+
     <section className="flex min-h-screen items-center justify-center bg-slate-50 px-4">
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
 
-        <h1 className="text-center text-3xl font-bold text-[#5B3DF5]">
-          Welcome Back
-        </h1>
-
-        <p className="mt-2 text-center text-gray-500">
-          Login to continue your career journey
-        </p>
+         <h1 className="text-center text-3xl font-bold text-[#5B3DF5]"> Welcome Back </h1>
+         <p className="mt-2 text-center text-gray-500"> Login to continue your career journey </p>
 
         <form
           onSubmit={handleLogin}
@@ -112,6 +106,8 @@ const Login = () => {
             name="email"
             type="email"
             placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="w-full rounded-xl border p-3"
             required
           />
@@ -120,6 +116,8 @@ const Login = () => {
             name="password"
             type="password"
             placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             className="w-full rounded-xl border p-3"
             required
           />
@@ -131,10 +129,12 @@ const Login = () => {
           >
             {loading ? "Logging in..." : "Login"}
           </button>
+
         </form>
 
         <div className="my-5">
           <button
+            type="button"
             onClick={handleGoogleLogin}
             disabled={loading}
             className="w-full rounded-xl border py-3 font-semibold"
@@ -144,17 +144,23 @@ const Login = () => {
         </div>
 
         <div className="rounded-xl border border-violet-200 bg-violet-50 p-4">
-          <h3 className="text-lg font-semibold text-violet-700">
-            Demo Account
-          </h3>
+          <h3 className="text-lg font-semibold text-violet-700"> Demo Account </h3>
 
-          <p className="mt-3 text-sm">
+          <p className="mt-3 text-sm text-gray-700">
             <strong>Email:</strong> demo@careerpilot.com
           </p>
 
-          <p className="text-sm">
+          <p className="text-sm text-gray-700">
             <strong>Password:</strong> 123456
           </p>
+
+          <button
+            type="button"
+            onClick={handleDemoLogin}
+            className="mt-4 w-full rounded-xl bg-violet-600 py-3 font-semibold text-white hover:bg-violet-700"
+          >
+            Use Demo Account
+          </button>
         </div>
 
         <p className="mt-6 text-center">
@@ -168,6 +174,7 @@ const Login = () => {
         </p>
 
       </div>
+      
     </section>
   );
 };
