@@ -55,7 +55,7 @@ const career = {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/careers",
+        "https://careerpilot-ai-server.onrender.com/api/careers",
         career,
         {
           withCredentials: true,
